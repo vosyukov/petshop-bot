@@ -53,5 +53,9 @@ func main() {
 		SomeHandler(c)
 	})
 
+	r.POST("/", func(c *gin.Context) {
+		SomeHandler(c)
+	})
+
 	r.Run(fmt.Sprintf(":%s", port))
 }
