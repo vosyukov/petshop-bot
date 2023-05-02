@@ -2,7 +2,6 @@ package moysklad_api
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 type Retailshift struct {
@@ -142,8 +141,6 @@ func GetRetailShift(id string) (Retailshift, error) {
 	var red Retailshift
 
 	json.Unmarshal([]byte(data), &red)
-
-	fmt.Println(red)
 
 	return red, err
 }
