@@ -1,13 +1,16 @@
 package moysklad_api
 
 import (
+	"fmt"
 	"io"
+	"log"
 	"net/http"
+	"net/http/httputil"
 )
 
 var client *http.Client
 
-const API_KEY = "a6f697ec1a1e0fb59e68dc617859287ceab260d8"
+const API_KEY = "300fe2a14e70b4d9db9fca7d4c2fa688378d293b"
 
 func init() {
 	client = http.DefaultClient
@@ -21,6 +24,13 @@ func SendHttpGetRequest(url string) ([]byte, error) {
 	resp, err := client.Do(req)
 
 	defer resp.Body.Close()
+
+	b, err := httputil.DumpResponse(resp, true)
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	fmt.Println(string(b))
 
 	body, err := io.ReadAll(resp.Body)
 
