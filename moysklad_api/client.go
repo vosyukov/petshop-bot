@@ -16,15 +16,17 @@ func init() {
 	client = http.DefaultClient
 }
 
-func SendHttpGetRequest(url string) ([]byte, error) {
-	req, err := http.NewRequest("GET", url, nil)
+func SendHttpGetRequest(url1 string, params string) ([]byte, error) {
+
+	fmt.Println(url1 + "?" + params)
+
+	req, err := http.NewRequest("GET", url1+"?"+params, nil)
 
 	req.Header.Set("Authorization", "Bearer "+API_KEY)
 
 	resp, err := client.Do(req)
 
 	defer resp.Body.Close()
-
 	b, err := httputil.DumpResponse(resp, true)
 	if err != nil {
 		log.Fatalln(err)

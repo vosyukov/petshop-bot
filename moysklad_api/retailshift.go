@@ -136,7 +136,7 @@ type Retailshift struct {
 }
 
 func GetRetailShift(id string) (Retailshift, error) {
-	var data, err = SendHttpGetRequest("https://online.moysklad.ru/api/remap/1.2/entity/retailshift/" + id)
+	var data, err = SendHttpGetRequest("https://online.moysklad.ru/api/remap/1.2/entity/retailshift/"+id, "")
 
 	var red Retailshift
 

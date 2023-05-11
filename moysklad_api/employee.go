@@ -46,7 +46,7 @@ type Employee struct {
 }
 
 func GetEmployee(id string) (Employee, error) {
-	var data, err = SendHttpGetRequest("https://online.moysklad.ru/api/remap/1.2/entity/employee/" + id)
+	var data, err = SendHttpGetRequest("https://online.moysklad.ru/api/remap/1.2/entity/employee/"+id, "")
 
 	var red Employee
 

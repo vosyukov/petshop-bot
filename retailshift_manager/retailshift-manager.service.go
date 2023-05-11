@@ -19,7 +19,7 @@ func OnHandleUpdateRetailshift(retailshiftId string) {
 		var employee, _ = moysklad_api.GetEmployee(employeeId)
 
 		var text = "Закрыта смена: " + retailshift.Name + "\n"
-		text += "Время закрытия: " + retailshift.Created + "\n"
+		text += "Время закрытия: " + retailshift.CloseDate + "\n"
 		text += "Сотрудник: " + employee.FullName + "\n"
 
 		telegram.SendMessage(263537201, text)
