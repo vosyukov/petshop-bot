@@ -15,7 +15,6 @@ type Filter struct {
 
 func init() {
 
-	GetReportByEmployee(Filter{movementTo: "2023-05-03", movementFrom: "2016-04-15 15:48:46"}, 0, 20)
 }
 
 func GetReportByEmployee(filter Filter, offset int, limit int) (Employee, error) {
