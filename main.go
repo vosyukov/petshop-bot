@@ -21,6 +21,10 @@ func main() {
 
 	r := gin.Default()
 
+	r.Any("/healthcheck", func(c *gin.Context) {
+		c.Status(200)
+	})
+
 	r.POST("/retailshift/create", func(c *gin.Context) {
 		retailshift_manager.OnHandleCreateRetailshiftController(c)
 	})
