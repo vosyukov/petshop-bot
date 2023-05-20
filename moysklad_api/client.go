@@ -6,11 +6,12 @@ import (
 	"log"
 	"net/http"
 	"net/http/httputil"
+	"os"
 )
 
 var client *http.Client
 
-const API_KEY = "300fe2a14e70b4d9db9fca7d4c2fa688378d293b"
+var API_KEY = os.Getenv("MOYSKLAD_API_KEY")
 
 func init() {
 	client = http.DefaultClient
